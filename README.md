@@ -4,17 +4,17 @@ Receive the Cooking or Tips Channel info as a mailbox message.
 
 <details>
  <summary>Livin' off the land</summary>
- ![Tip](/screenshots/tip.png)
+ ![](https://github.com/remybach/stardew-valley-readersdigest/raw/master/screenshots/tip.png)
 </details>
 
 <details>
  <summary>Queen of Sauce</summary>
- ![Recipe](/screenshots/recipe.png)
+ ![](https://github.com/remybach/stardew-valley-readersdigest/raw/master/screenshots/recipe.png)
 </details>
 
 <details>
  <summary>Recipe learned notification</summary>
- ![Recipe Learned](/screenshots/recipe-learned.png)
+ ![](https://github.com/remybach/stardew-valley-readersdigest/raw/master/screenshots/recipe-learned.png)
 </details>
 
 # Install
