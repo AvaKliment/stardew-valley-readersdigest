@@ -6,5 +6,5 @@
    "UniqueID": "remybach.readersdigest",
    "EntryDll": "readersdigest.dll",
    "MinimumApiVersion": "2.0",
-   "UpdateKeys": []
+   "UpdateKeys": [ "Nexus:3040" ]
 }

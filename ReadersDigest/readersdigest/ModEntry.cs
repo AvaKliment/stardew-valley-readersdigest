@@ -3,8 +3,6 @@ using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley.Objects;
 using StardewValley;
-using System.Threading.Tasks;
-using System.Text.RegularExpressions;
 using System.Collections.Generic;
 
 namespace YourProjectName
@@ -48,8 +46,10 @@ namespace YourProjectName
             if (!Context.IsWorldReady) return;
 
             TV tv = new TV();
+            string day = Game1.shortDayNameFromDayOfSeason(Game1.dayOfMonth);
 
-            if (this.Config.enableTips) {
+            // Logic for which days each these are displayed taken from here: https://github.com/sndcode/stardewvalleycode/blob/master/Stardew%20Valley/Objects/TV.cs#L31-L43
+            if (this.Config.enableTips && (day.Equals("Mon") || day.Equals("Thu"))) {
                 string tip = this.Helper.Reflection
                                .GetMethod(tv, "getTodaysTip")
                                .Invoke<string>();
@@ -62,10 +62,10 @@ namespace YourProjectName
                 }
             }
 
-            if (this.Config.enableCooking) {
+            if (this.Config.enableCooking && day.Equals("Sun")) {
                 // Calculation taken from here: https://github.com/sndcode/stardewvalleycode/blob/master/Stardew%20Valley/Objects/TV.cs#L287
                 int whichWeek = (int)(Game1.stats.DaysPlayed % 224u / 7u);
-                if (Game1.shortDayNameFromDayOfSeason(Game1.dayOfMonth).Equals("Wed")) {
+                if (day.Equals("Wed")) {
                     Random r = new Random((int)(Game1.stats.DaysPlayed + (uint)((int)Game1.uniqueIDForThisGame / 2)));
                     whichWeek = Math.Max(1, 1 + r.Next((int)(Game1.stats.DaysPlayed % 224u)) / 7);
                 }
@@ -79,6 +79,7 @@ namespace YourProjectName
 
                     if (cooking.Length > -1) {
                         lastLearned = cooking[1];
+
                         // Insert this at the top of the queue so the next close event shows the correct recipe learned message.
                         Game1.mailbox.Insert(0, $"cooking_{whichWeek}");
                     }

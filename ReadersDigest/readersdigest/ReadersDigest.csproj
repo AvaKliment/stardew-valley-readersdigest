@@ -7,8 +7,8 @@
     <ProjectGuid>{2DC95AA9-9ADC-4DF3-A057-D66611A68841}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>readersdigest</RootNamespace>
-    <AssemblyName>readersdigest</AssemblyName>
+    <RootNamespace>ReadersDigest</RootNamespace>
+    <AssemblyName>ReadersDigest</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
