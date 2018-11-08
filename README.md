@@ -1,5 +1,22 @@
 # Stardew Valley Readers Digest
 
+Receive the Cooking or Tips Channel info as a mailbox message.
+
+<details>
+ <summary>Livin' off the land</summary>
+ ![](screenshots/tip.png)
+</details>
+
+<details>
+ <summary>Queen of Sauce</summary>
+ ![](screenshots/recipe.png)
+</details>
+
+<details>
+ <summary>Recipe learned notification</summary>
+ ![](screenshots/recipe-learned.png)
+</details>
+
 # Install
 
 + Install the latest version of [SMAPI](https://smapi.io/).
