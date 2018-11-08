@@ -14,6 +14,13 @@
 + No known mod conflicts.
 + Works in all languages
 
+# Config
+
+You have the following options available in `config.json`:
+
++ `enableCooking` - (default: `true`) Enables the cooking channel digest (Queen of Sauce).
++ `enableTips` - (default: `true`) Enables the tips channel digest (Livin' off the Land).
+
 # See also
 
 + [Source code](https://github.com/remybach/stardew-valley-readersdigest)
