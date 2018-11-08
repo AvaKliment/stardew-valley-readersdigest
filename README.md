@@ -4,17 +4,17 @@ Receive the Cooking or Tips Channel info as a mailbox message.
 
 <details>
  <summary>Livin' off the land</summary>
- ![Tip](screenshots/tip.png)
+ ![Tip](/screenshots/tip.png)
 </details>
 
 <details>
  <summary>Queen of Sauce</summary>
- ![Recipe](screenshots/recipe.png)
+ ![Recipe](/screenshots/recipe.png)
 </details>
 
 <details>
  <summary>Recipe learned notification</summary>
- ![Recipe Learned](screenshots/recipe-learned.png)
+ ![Recipe Learned](/screenshots/recipe-learned.png)
 </details>
 
 # Install
