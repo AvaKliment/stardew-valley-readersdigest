@@ -35,6 +35,7 @@ Receive the Cooking or Tips Channel info as a mailbox message.
 
 You have the following options available in `config.json`:
 
++ `clairvoyance` - (default: `false`) Make your farmer have a premonition and learn the recipe overnight (displays a tooltip saying you've learned the recipe upon waking up).
 + `enableCooking` - (default: `true`) Enables the cooking channel digest (Queen of Sauce).
 + `enableTips` - (default: `true`) Enables the tips channel digest (Livin' off the Land).
 

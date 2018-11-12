@@ -4,6 +4,7 @@ using StardewModdingAPI.Events;
 using StardewValley.Objects;
 using StardewValley;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace YourProjectName
 {
@@ -30,7 +31,7 @@ namespace YourProjectName
         ** Private methods
         *********/
         private void MenuEvents_MenuClosed(object sender, EventArgsClickableMenuClosed e) {
-            if (e.PriorMenu is StardewValley.Menus.LetterViewerMenu && lastLearned != "") {
+            if (!this.Config.clairvoyance && e.PriorMenu is StardewValley.Menus.LetterViewerMenu && lastLearned != "") {
                Game1.addHUDMessage(new HUDMessage(lastLearned, 2));
 
                 lastLearned = "";
@@ -41,7 +42,7 @@ namespace YourProjectName
         /// <summary>The method invoked when the player presses a controller, keyboard, or mouse button.</summary>
         /// <param name="sender">The event sender.</param>
         /// <param name="e">The event data.</param>
-        private void TimeEvents_AfterDayStarted(object sender, EventArgs e) {
+        async private void TimeEvents_AfterDayStarted(object sender, EventArgs e) {
             // ignore if player hasn't loaded a save yet
             if (!Context.IsWorldReady) return;
 
@@ -62,7 +63,7 @@ namespace YourProjectName
                 }
             }
 
-            if (this.Config.enableCooking && day.Equals("Sun")) {
+            if ((this.Config.enableCooking || this.Config.clairvoyance) && day.Equals("Sun")) {
                 // Calculation taken from here: https://github.com/sndcode/stardewvalleycode/blob/master/Stardew%20Valley/Objects/TV.cs#L287
                 int whichWeek = (int)(Game1.stats.DaysPlayed % 224u / 7u);
                 if (day.Equals("Wed")) {
@@ -74,14 +75,22 @@ namespace YourProjectName
 
                 if (recipeName != "" && !Game1.player.cookingRecipes.ContainsKey(recipeName)) {
                     string[] cooking = this.Helper.Reflection
-                               .GetMethod(tv, "getWeeklyRecipe")
+                               .GetMethod(tv, "getWeeklyRecipe") // This is the part that actually adds the recipe as a learned recipe
                                .Invoke<string[]>();
 
                     if (cooking.Length > -1) {
                         lastLearned = cooking[1];
 
                         // Insert this at the top of the queue so the next close event shows the correct recipe learned message.
-                        Game1.mailbox.Insert(0, $"cooking_{whichWeek}");
+                        if (this.Config.enableCooking) {
+                            Game1.mailbox.Insert(0, $"cooking_{whichWeek}");
+                        }
+
+                        // If the farmer is clairvoyant, show the 'learned' message as a tooltip upon waking up.
+                        if (this.Config.clairvoyance) {
+                            await Task.Delay(1000);
+                            Game1.addHUDMessage(new HUDMessage(lastLearned, 2));
+                        }
                     }
                 }
             }
