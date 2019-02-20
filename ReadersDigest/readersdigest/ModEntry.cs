@@ -22,16 +22,18 @@ namespace YourProjectName
         /// <param name="helper">Provides simplified APIs for writing mods.</param>
         public override void Entry(IModHelper helper) {
             this.Config = this.Helper.ReadConfig<ModConfig>();
-            TimeEvents.AfterDayStarted += this.TimeEvents_AfterDayStarted;
-            MenuEvents.MenuClosed += this.MenuEvents_MenuClosed;
+            helper.Events.GameLoop.DayStarted += TimeEvents_AfterDayStarted;
+            //TimeEvents.AfterDayStarted += this.TimeEvents_AfterDayStarted;
+            helper.Events.Display.MenuChanged += MenuEvents_MenuClosed;
+            //MenuEvents.MenuClosed += this.MenuEvents_MenuClosed;
         }
 
 
         /*********
         ** Private methods
         *********/
-        private void MenuEvents_MenuClosed(object sender, EventArgsClickableMenuClosed e) {
-            if (!this.Config.clairvoyance && e.PriorMenu is StardewValley.Menus.LetterViewerMenu && lastLearned != "") {
+        private void MenuEvents_MenuClosed(object sender, MenuChangedEventArgs e) {
+            if (!this.Config.clairvoyance && e.OldMenu is StardewValley.Menus.LetterViewerMenu && lastLearned != "") {
                Game1.addHUDMessage(new HUDMessage(lastLearned, 2));
 
                 lastLearned = "";

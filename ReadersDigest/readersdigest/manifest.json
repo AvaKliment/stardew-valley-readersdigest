@@ -4,7 +4,7 @@
    "Version": "1.0.0",
    "Description": "Receive the Cooking or Tips Channel info as a mailbox message.",
    "UniqueID": "remybach.readersdigest",
-   "EntryDll": "readersdigest.dll",
-   "MinimumApiVersion": "2.0",
+   "EntryDll": "ReadersDigest.dll",
+   "MinimumApiVersion": "2.10.2",
    "UpdateKeys": [ "Nexus:3040" ]
 }
