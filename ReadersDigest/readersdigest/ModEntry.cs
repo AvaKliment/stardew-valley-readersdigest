@@ -94,8 +94,7 @@ namespace YourProjectName
 
                         // If the farmer is clairvoyant, show the 'learned' message as a tooltip upon waking up.
                         if (this.Config.Clairvoyance) {
-                            await Task.Delay(1000);
-                            Game1.addHUDMessage(new HUDMessage(LastLearned, 2));
+                            Game1.delayedActions.Add(new DelayedAction(1000, () => Game1.addHUDMessage(new HUDMessage(LastLearned, 2))));
                         }
                     }
                 }
