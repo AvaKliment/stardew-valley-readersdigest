@@ -1,25 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29020.237
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadersDigest", "readersdigest\ReadersDigest.csproj", "{4A82A9D7-A702-4C81-B988-B6F0ECF6AAA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadersDigest", "ReadersDigest\ReadersDigest.csproj", "{619AE85C-162E-467F-852F-9DFDF39A63D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x86 = Debug|x86
-		Release|x86 = Release|x86
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4A82A9D7-A702-4C81-B988-B6F0ECF6AAA1}.Debug|x86.ActiveCfg = Debug|x86
-		{4A82A9D7-A702-4C81-B988-B6F0ECF6AAA1}.Debug|x86.Build.0 = Debug|x86
-		{4A82A9D7-A702-4C81-B988-B6F0ECF6AAA1}.Release|x86.ActiveCfg = Release|x86
-		{4A82A9D7-A702-4C81-B988-B6F0ECF6AAA1}.Release|x86.Build.0 = Release|x86
+		{619AE85C-162E-467F-852F-9DFDF39A63D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{619AE85C-162E-467F-852F-9DFDF39A63D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{619AE85C-162E-467F-852F-9DFDF39A63D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{619AE85C-162E-467F-852F-9DFDF39A63D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1F012752-7F3B-4573-8676-DE626C6AFA80}
+		SolutionGuid = {D2489B27-EB7F-4685-9701-A30EA75D3B43}
 	EndGlobalSection
 EndGlobal

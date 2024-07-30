@@ -1,7 +1,7 @@
 {
     "Name": "ReadersDigestContent",
-    "Author": "Originally Remy Bach, Updated by Slash215",
-    "Version": "3.0.1",
+    "Author": "Slash215",
+    "Version": "3.0.2",
     "Description": "Content Pack for Readers Digest",
     "UniqueID": "Slash215.readersdigestcontent",
     "UpdateKeys": [ "Nexus:22972" ],
