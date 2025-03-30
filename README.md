@@ -29,7 +29,7 @@ Receive the Cooking or Tips Channel info as a mailbox message.
 
 # Compatibility
 
-+ Works with Stardew Valley 1.3 on Linux/Mac/Windows.
++ Works with Stardew Valley 1.6 on Linux/Mac/Windows.
 + Works in single-player and multiplayer.
 + No known mod conflicts.
 + Works in all languages
